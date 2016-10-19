@@ -46,7 +46,7 @@ post '/post' => sub {
 
     $data->link_to($path);
 
-    my $hex = Util::Image::img_to_base64($path);
+    my $hex = Util::Image::img_to_base64("fruit-log.herokuapp.com/tmp/".$data->basename);
     Util::Database::add_image($hex);
    
     unlink($path);
