@@ -36,7 +36,7 @@ get '/post' => sub {
 post '/post' => sub {
     my $data = request->upload('file');
 
-    my $dir = path(config->{'appdir'}, 'tmp');
+    my $dir = path(config->{'appdir'}, 'public/tmp');
     
     my $path = path($dir, $data->basename);
 
