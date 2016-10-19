@@ -12,12 +12,13 @@ get '/' => sub {
 
     my @imgs;
     while(my @row = $sth->fetchrow_array) {
-        push @imgs, {
+        unshift @imgs, {
             content     => $row[0],
             date_posted => $row[1]
         };
     }
 
+    
     template 'index', {
         imgs => \@imgs,
     };
