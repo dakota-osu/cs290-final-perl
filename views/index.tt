@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="/css/index.css">
 <div class="main-content">
 
     <ul>
         [% FOREACH img IN imgs %]
-            <li><img src="data:image/jpeg;base64,[%img.content%]"></li>
+            <li class="image"><img src="data:image/jpeg;base64,[%img.content%]"></li>
         [% END %]
     <ul>
 

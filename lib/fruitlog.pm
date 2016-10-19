@@ -29,7 +29,7 @@ get '/' => sub {
 ###########################
 
 get '/post' => sub {
-    template 'post';
+    "don't want to let just anyone post, too lazy to make this look nice"; 
 };
 
 post '/post' => sub {
