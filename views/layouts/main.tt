@@ -12,7 +12,6 @@
                 <ul class="navbar"> 
                     <li class="navbar-item"> <a href="/"> Home </a></li>
                     <li class="navbar-item"> <a href="/post"> Post </a></li>
-                    <li class="navbar-item"> <a href="/todos"> Todo </a></li>
                 </ul>
             </nav>
         </header>
