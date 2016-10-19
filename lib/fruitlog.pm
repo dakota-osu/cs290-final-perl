@@ -36,7 +36,7 @@ get '/post' => sub {
 post '/post' => sub {
     my $data = request->upload('file');
 
-    my $dir = path(config->{'appdir'}, 'public/tmp');
+    my $dir = path(config->{'public_dir'}, 'tmp');
     
     my $path = path($dir, $data->basename);
 
@@ -46,7 +46,7 @@ post '/post' => sub {
 
     $data->link_to($path);
 
-    my $hex = Util::Image::img_to_base64("/tmp/".$data->basename);
+    my $hex = Util::Image::img_to_base64($path);
     Util::Database::add_image($hex);
    
     unlink($path);
