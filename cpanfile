@@ -3,3 +3,4 @@ requires 'DBI';
 requires 'Dancer2';
 requires 'DBD::Pg';
 requires 'Template';
+requires 'File::Slurp';
