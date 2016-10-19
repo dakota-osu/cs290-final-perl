@@ -3,7 +3,10 @@
 
     <ul>
         [% FOREACH img IN imgs %]
-            <li class="image"><img src="data:image/jpeg;base64,[%img.content%]"></li>
+            <li class="image">
+                <img src="data:image/jpeg;base64,[%img.content%]"> 
+                <p class="date"> [% img.date_posted %] </p> 
+            </li>
         [% END %]
     <ul>
 
