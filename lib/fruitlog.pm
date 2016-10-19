@@ -44,7 +44,7 @@ post '/post' => sub {
         return "file aleady exists";
     }
 
-    $data->link_to($path);
+    $data->link_to($path) || die "failed to write files!\n";
 
     my $hex = Util::Image::img_to_base64($path);
     Util::Database::add_image($hex);
