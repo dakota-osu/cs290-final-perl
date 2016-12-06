@@ -19,22 +19,22 @@ sub get_database {
     DBI->connect($dsn, $user, $pass, {RaiseError => 1}) or die "Failed To Connect To Database. \n";
 }
 
-sub add_image {
-    my $data = shift;
-
-    my $sql = "INSERT INTO fruitlog (content, date_posted) VALUES (?, CURRENT_DATE)";
-    my $db  = get_database();
-    my $sth = $db->prepare($sql);
-    $sth->execute($data);
-}
-
-sub fetch_images {
-    my $sql = "SELECT content, date_posted FROM fruitlog";
-    my $db  = get_database();
-    my $sth = $db->prepare($sql);
-    $sth->execute or warn "Failed To Select Data";
-
-    $sth;
-}
+# sub add_image {
+#     my $data = shift;
+# 
+#     my $sql = "INSERT INTO fruitlog (content, date_posted) VALUES (?, CURRENT_DATE)";
+#     my $db  = get_database();
+#     my $sth = $db->prepare($sql);
+#     $sth->execute($data);
+# }
+# 
+# sub fetch_images {
+#     my $sql = "SELECT content, date_posted FROM fruitlog";
+#     my $db  = get_database();
+#     my $sth = $db->prepare($sql);
+#     $sth->execute or warn "Failed To Select Data";
+# 
+#     $sth;
+# }
 
 1;
