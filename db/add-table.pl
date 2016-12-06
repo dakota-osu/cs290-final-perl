@@ -20,10 +20,12 @@ print "Succesfully Connect To Database\n";
 
 
 # create the fan fiction database
-my $sql = "CREATE TABLE fruitlog (
+my $sql = "CREATE TABLE users (
    _id SERIAL,
-   content varchar,
-   date_posted date
+   username VARCHAR,
+   password VARCHAR,
+   bio VARCHAR,
+   scores INT[]
 );";
 
 $db->do($sql) or die "Failed To Write To Database!\n";

@@ -17,14 +17,16 @@ my $db     = DBI->connect($dsn, $user, $pass, {RaiseError => 1}) or die "Failed 
 
 print "Succesfully Connected To Database\n";
 
-my $sql = "SELECT _id, content, date_posted FROM blog_post";
+my $sql = "SELECT _id, username, password, bio FROM users";
 my $sth = $db->prepare($sql);
 $sth->execute or die "Failed To Select\n";
 
 
 while(my @row = $sth->fetchrow_array()) {
-    print "_id      = $row[0]\n";
-    print "content  = $row[2]\n";
+    print "_id       = $row[0]\n";
+    print "username  = $row[1]\n";
+    print "password  = $row[2]\n";
+    print "bio       = $row[3]\n";  
     print "\n";
 }
 

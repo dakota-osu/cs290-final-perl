@@ -19,6 +19,28 @@ sub get_database {
     DBI->connect($dsn, $user, $pass, {RaiseError => 1}) or die "Failed To Connect To Database. \n";
 }
 
+sub authenticate {
+    my ($username, $password) = @_;
+
+    my $sql = "SELECT password FROM users WHERE username LIKE (?)";
+    my $db  = get_database();
+    my $sth = $db->prepare($sql);
+    $sth->execute($username);
+
+    my @row = $sth->fetchrow_array;
+
+    return $row[0] eq $password;
+}
+
+sub add_user {
+    my ($username, $password, $bio) = @_;
+
+    my $sql = "INSERT INTO users (username, password, bio) VALUES (?, ?, ?)";
+    my $db  = get_database();
+    my $sth = $db->prepare($sql);
+    $sth->execute($username, $password, $bio);
+}
+
 # sub add_image {
 #     my $data = shift;
 # 

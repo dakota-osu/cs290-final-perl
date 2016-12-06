@@ -1,13 +1,41 @@
-<link rel="stylesheet" href="/css/index.css">
-<div class="main-content">
+<main>
+    <h2> Welcome to the Pong Zone! </h2>
+    <p> This Page will allow you to play Pong!</p>
+    <p> You can either go directly to the pong page or you can</p>
+    <p> login if you wish to track your scores. If you click login a prompt will</p>
+    <p> apear and you can eithe log in as an existing user by clickin log in or</p>
+    <p> create a new user by clicking the new user button.</p>
+</main>
 
-    <ul>
-        [% FOREACH img IN imgs %]
-            <li class="image">
-                <img src="data:image/jpeg;base64,[%img.content%]"> 
-                <p class="date"> [% img.date_posted %] </p> 
-            </li>
-        [% END %]
-    <ul>
 
+
+<div id="modal-backdrop" class="hidden"></div>
+    <div id="add-note-modal" class="hidden">
+        <div class="modal-dialog">
+            <form method="post" action="/login">
+            <div class="modal-header">
+                <h3>Sign-in</h3>
+                <button type="button" class="modal-close-button">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="login-input-element required">
+                    <label for="login-input-userid">USERID</label>
+                    <p></p>
+                    <input type="text" id="login-input-userid" name="userId">
+                </div>
+                <div class="login-input-element">
+                    <label for="longin-input-password">PASSWORD</label>
+                    <p></p>
+                    <input type="password" id="login-input-password" name=password>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="modal-cancel-button"> Cancel </button>
+                <button type="button" id="modal-accept-button"> Login </button>
+            </div>
+        </form>
+    </div>
 </div>
+

@@ -1,9 +1,0 @@
-<div class="main-content">
-
-    <form action="/post" method="post" enctype="multipart/form-data">
-        <label for="fileselector"> Choose An Image </label>
-        <input type="file" name="file" id="fileselector" accept="image/*" class="input-image">
-        <input type="submit" name="submit" value="Submit">
-    </form>
-
-</div>

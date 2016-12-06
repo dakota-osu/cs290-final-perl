@@ -17,5 +17,5 @@ my $db     = DBI->connect($dsn, $user, $pass, {RaiseError => 1}) or die "Failed 
 print "Succesfully Connect To Database\n";
 
 
-my $sql = "TRUNCATE fruitlog";
+my $sql = "TRUNCATE users";
 $db->do($sql) or die "Failed To Remove Database\n";

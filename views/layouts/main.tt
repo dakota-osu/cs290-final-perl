@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <link rel="stylesheet" href="/css/style.css">
-        <title> Fruit Log </title>
+        <title> [% page_title %] </title>
     </head>
     
     <body>
-        <header>
-            <h1> Fruit Log </h1>
-            <nav>
-                <ul class="navbar"> 
-                    <li class="navbar-item"> <a href="/"> Home </a></li>
-                    <!-- <li class="navbar-item"> <a href="/post"> Post </a></li> -->
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            [% content %]
-        </main>
-
-        <footer>
-            <div class="copyright">
-            </div>
-        </footer>
+        <h1><strong>[% page_title %]</strong></h1> 
+        <nav>
+            <ul class="navbar-list">
+                [% IF user_name %]
+                    <li class="navbar-item"><a href="/pong/[% user_name %]">Pong</a></li>
+                    <li class="navbar-item"><a href="/high-scores/[% user_name %]">High-scores</a></li>
+                    <li class="navbar-item"><a href="/user-scores/[% user_name %]" id="user-name">{{userName}}</a></li>
+                    <li class="navbar-item navbar-right" id="logout-button"><a>log Off</a></li>
+                [% ELSE %]
+                    <li class="navbar-item"><a href="/pong">Pong</a></li>
+                    <li class="navbar-item"><a href="/high-scores">High-scores</a></li>
+                    <li class="navbar-item navbar-right" id="login-button"><a>log on</a></li>
+                [% END %]
+            </ul>
+        </nav>
+        [% content %]
     </body>
 
 </html>
+<script src="/js/index.js"> </script>
