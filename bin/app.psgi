@@ -6,8 +6,8 @@ use Plack::Builder;
 
 use lib 'lib';
 
-use fruitlog;
+use pong;
 
 builder {
-    mount '/' => fruitlog->to_app,
+    mount '/' => pong->to_app,
 };

@@ -42,7 +42,7 @@ post '/post' => sub {
     my $path = path($dir, $data->basename);
 
     if(-e $path) {
-        return "file aleady exists";
+        return "file already exists";
     }
 
     $data->copy_to($path) || die "failed to copy files!\n";
